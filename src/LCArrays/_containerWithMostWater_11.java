@@ -1,4 +1,4 @@
-package code;
+package LCArrays;
 
 public class _containerWithMostWater_11 {
     public static int maxArea(int[] height)

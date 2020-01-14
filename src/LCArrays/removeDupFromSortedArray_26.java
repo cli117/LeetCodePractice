@@ -1,4 +1,4 @@
-package code;
+package LCArrays;
 
 public class removeDupFromSortedArray_26 {
     public static int removeDuplicates(int[] nums) {

@@ -1,4 +1,4 @@
-package code;
+package LCArrays;
 
 import java.util.Arrays;
 
