@@ -1,3 +1,5 @@
+package PCRecursion;
+
 public class _NextPermutation_31 {
     public static void nextPermutation(int[] nums) {
         // Algo:

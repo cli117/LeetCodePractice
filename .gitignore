@@ -71,3 +71,5 @@ fabric.properties
 *.iml
 
 *.pages
+
+.idea/
