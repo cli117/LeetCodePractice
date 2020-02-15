@@ -1,3 +1,17 @@
 1. Array操作时，考虑two pointer方法，详见 <11>, <15>.
 2. 对LinkedList操作时，考虑两个指针以省去一次遍历，详见<19>
 3. Backtracking的时间复杂度：O(b^d)，b是每一次做决定可以选择的选项数量，d是决策树的深度。最后一层会有b^d个node。
+4. In Java programming, Java Priority Queue is implemented using Heap Data Structures and Heap has O(log(n))
+time complexity to insert and delete element. 多个list之间比较的时候，可以建立长度为k的priority queue而不是直接比较。
+可将时间复杂度从O(k)降低到O(logk)。详见23
+5. The next lexicographic permutation of the given list of numbers: 在给定int array中找出所有排序可能中比当前排序
+大的最小数。（如将所有permutation都排序好，找到当前顺序的下一个大的顺序）。详见31
+6. RotatedSortedArray, 将array按大小画图，将mid和right的关系，mid和target，right和target的大小分情况讨论。
+注意：当left和right需要update并且跟mid一样的时候（由于进位），将mid进行++或者--以进行一次更新。
+7. MergeIntervals, 客制的class可以implement Comparable<CustomClass>并override compareTo来使用
+Collections.sort(List<CustomClass>)来按需求sort
+8. DP最终要的点是想到dp[i] 和 dp[i-1]的关系 或 在2Darray中 如何从前面的已算出的求出dp[i][j] 以及各位置初始值
+典型的一种是某个status可以由多个其他status达到，那么新的dp entry就由前面的dp entry相加 详见70。
+9. dp中很多2D array比较好想，但是很多可以用1D array就可以达到需求 详见53 62.
+10.* Stack可以解决计算最小面积的问题。维护方式见84.
+11. Binary tree的多种遍历方法，详见94
