@@ -1,17 +1,47 @@
 1. Array操作时，考虑two pointer方法，详见 <11>, <15>.
-2. 对LinkedList操作时，考虑两个指针以省去一次遍历，详见<19>
+2. 对LinkedList操作时，考虑两个指针以省去一次遍历，详见<19> 还有很讨巧的快慢指针做法详见<141> <160>
 3. Backtracking的时间复杂度：O(b^d)，b是每一次做决定可以选择的选项数量，d是决策树的深度。最后一层会有b^d个node。
 4. In Java programming, Java Priority Queue is implemented using Heap Data Structures and Heap has O(log(n))
 time complexity to insert and delete element. 多个list之间比较的时候，可以建立长度为k的priority queue而不是直接比较。
-可将时间复杂度从O(k)降低到O(logk)。详见23
+可将时间复杂度从O(k)降低到O(logk)。详见<23> 可使用comparator或者讲排序的对象implement comparable两种方式。
 5. The next lexicographic permutation of the given list of numbers: 在给定int array中找出所有排序可能中比当前排序
-大的最小数。（如将所有permutation都排序好，找到当前顺序的下一个大的顺序）。详见31
+大的最小数。（如将所有permutation都排序好，找到当前顺序的下一个大的顺序）。详见<31>
 6. RotatedSortedArray, 将array按大小画图，将mid和right的关系，mid和target，right和target的大小分情况讨论。
 注意：当left和right需要update并且跟mid一样的时候（由于进位），将mid进行++或者--以进行一次更新。
 7. MergeIntervals, 客制的class可以implement Comparable<CustomClass>并override compareTo来使用
 Collections.sort(List<CustomClass>)来按需求sort
 8. DP最终要的点是想到dp[i] 和 dp[i-1]的关系 或 在2Darray中 如何从前面的已算出的求出dp[i][j] 以及各位置初始值
-典型的一种是某个status可以由多个其他status达到，那么新的dp entry就由前面的dp entry相加 详见70。
-9. dp中很多2D array比较好想，但是很多可以用1D array就可以达到需求 详见53 62.
-10.* Stack可以解决计算最小面积的问题。维护方式见84.
-11. Binary tree的多种遍历方法，详见94
+典型的一种是某个status可以由多个其他status达到，那么新的dp entry就由前面的dp entry相加 详见<70>。
+9. dp中很多2D array比较好想，但是很多可以用1D array就可以达到需求 详见<53> <62>.
+10.* Stack可以解决计算最小面积的问题。维护方式见<84>.
+11. Binary tree的多种遍历方法，详见<94>
+12. 使用Set来检查一组数据中是否包含某一个：O(1)
+13. 考虑bitwise运算，相同的数字使用xor(^) 运算可得出0。在136题中可使用bitwise运算迅速出结果。
+14. 递归使用栈来记忆，故递归n次则的空间复杂度至少为O(n)
+15. Java遍历Map for(Map.Entry<Integer, Integer> entry : counts.entrySet())
+16. DP: 设计动态规划的三个步骤
+        将问题分解成最优子问题；
+        用递归的方式将问题表述成最优子问题的解；
+        自底向上的将递归转化成迭代；（递归是自顶向下）; 所以空间复杂度会变为O(1)
+        最优子问题
+        对于连续的 nn 栋房子：H~1~,H~2~,H~3~......H~n~H 1 ,H 2 ,H 3 ......H n ，小偷挑选要偷的房子，且不能偷相邻的两栋房子，方案无非两种：
+        方案一：挑选的房子中包含最后一栋；
+        方案二：挑选的房子中不包含最后一栋；
+        获得的最大收益的最终方案，一定在这两种方案中产生，用代码表述就是：
+        最优结果 = Math.max(方案一最优结果，方案二最优结果)
+        详见 <198>
+
+17. 拓扑排序，检测有向图是否存在环。如无 可算出一个符合条件的path。方法分为DFS, BFS。详见 <207>
+18. 新数据结构：Trie (we pronounce "try") or prefix tree is a tree data structure, which is used for retrieval of a
+key in adataset of strings. There are various applications of this very efficient data structure such as :
+    i) Autocomplete ii) Spell Checker iii) IP routing ...
+19. deque, double ended queue 双端队列，在头部尾部插入删除都是O（1），详见 <239>
+20. LinkedList用快慢指针法检测是否有环。找入口时，将慢指针结果和一个初始化指针一同遍历LL，相遇处即为环入口。(a为非环长，b为环长)
+（t(fast) = t(slow) + nb, t(fast) = 2 * t(slow), t(slow) = nb, 而a+nb就会到达入口，所以再给slow+a即为结果）<142> <287>
+21. *重要！ heap由int[] 实现，最大最小堆根据要求选择，不使用指针对象等节约空间。一个node的parent的index为 (n-1)/2。java中
+的PriorityQueue实现了最小堆，堆顶是最小值。通过override comparator或者使用lambda表达式可以转变为最大堆。详见<295>
+22. 在serialize和deserialize中，虽然例子中给出的中间结果是BFS，但BFS出的较难重构新tree，故使用递归法一路向左再向右得到
+serialize后的结果再用递归重构。详见 <297>
+23. 频繁使用String += 操作的话 应该使用StringBuilder来append
+24. <300> 应该能想出来的 再多看看 <301> nice backtrack，基本为<22>的变种
+25. 根据状态做DP。中文309题 第一个答案

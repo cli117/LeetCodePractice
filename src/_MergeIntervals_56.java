@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class _MergeIntervals_56 {
 
-    public static class Interval implements Comparable<Interval>
+    private static class Interval implements Comparable<Interval>
     {
         int start;
         int end;
