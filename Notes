@@ -45,3 +45,14 @@ serialize后的结果再用递归重构。详见 <297>
 23. 频繁使用String += 操作的话 应该使用StringBuilder来append
 24. <300> 应该能想出来的 再多看看 <301> nice backtrack，基本为<22>的变种
 25. 根据状态做DP。中文309题 第一个答案
+26. DP: Top-down 解出递推公式后，top-down是用recursion将大问题变成小问题，并把小问题用recursion解决，然后在method里用if
+给base case赋值。而bottom-up用array，将base case的值直接赋给array，再通过递推公式算出结果。直接返回dp array的最后一个。
+相似的，普通recursion直接return当前循环的结果+下一个call结果，栈中一直存着中间结果，会导致爆栈。而tail recursion将结果存为
+一个变量 在recursion中传递，大大减少内存用量和爆栈问题。
+27. Java中的位操作 各种奇技淫巧 详见 <191> 中的题解， n &= (n-1) 可以去掉最后一个bit的1
+重要：判断奇偶性用i&1来判断 既和1做和运算 如果得1则为奇，得0为偶  // x / 2 is x >> 1 and x % 2 is x & 1
+https://www.cnblogs.com/hapjin/p/5839797.html
+
+28. 将int[] linkedlist，也就是一串数字对，转化成二维数组：output.toArray(new int[n][2]);
+29. 如果dp只对自己上面的元素有依赖，则可以使用一维数组。上方和左上，一维数组倒序（只有倒序才能保证用到的是旧的上一行的数据，不然
+新更新的数据会覆盖掉旧的，导致错误。）同理，如果上方和右上，则可正常使用一维数组正序。
