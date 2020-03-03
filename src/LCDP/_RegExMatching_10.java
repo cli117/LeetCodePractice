@@ -20,7 +20,7 @@ public class _RegExMatching_10 {
             return first_match && isMatch(s.substring(1), p.substring(1));
         }
     }
-}
+    }
 
 enum Result {
     TRUE, FALSE

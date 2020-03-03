@@ -60,3 +60,32 @@ https://www.cnblogs.com/hapjin/p/5839797.html
 31. 在树的递归中，可以传递一个array来存储到目前为止这条path的所有元素。每个recursion中array不一样，所以表达的path也不一样。
 然后可以对path进行操作来达到目的。通常需要一个int来记录当前path的长度。
 32. 双指针法的sliding window比一个长度固定的window slide效率高：会略过很多不用检查的window。检查重复方法详见<438>
+33. 数组求和的问题常用dp，二维数组[i][j] 其中i代表前i个元素，j代表合为j。根据情况求出递推公式，再分析能不能使用一维数组节约
+空间。
+34. 记得使用sort的方法得到基础的答案。
+35. 反向sort： Collections.sort(collection, Collections.reverseOrder());
+              Arrays.sort(array, Collections.reverseOrder());
+36. 比大小的时候记得尝试stack，stack中常存的是index。取值比较时使用nums[stack.peek()]
+
+
+看过答案以后还不会的:
+<84> <85>(85是n个84题合起来，n为行数)
+<41> 数组操作中将一个值放到想要放的位置用交换，不需要链式操作。而换过来的值需要重新考虑。但如果两个交换值相等，不做交换。
+<39>(backtrack剪枝)
+<34> BS
+<32> stack/DP
+<31> 词典序
+<3> sliding window
+
+
+*** 双指针法可以找到链表中点
+*** Top-down 都是recursion，bottom-up是直接从小问题往上走
+*** 找在n为长，元素为1~n的数组中找重复数字，可以将数组看作LL，找环的入口
+*** DP是状态转移，一个状态由一个或多个 有效 的状态计算而成。当处理删除无效括号的一类问题中，有效的状态可能从非有效的状态
+转移而来。故不能使用DP，而是从backtrack入手再进行优化
+*** 检测括号是否合法，遍历 一旦#left - #right 为负直接不合法。最后返回 #left - #right == 0
+*** BFS在删除括号问题中，指不管遇到‘(’还是‘)’，都尝试删除。DFS是查找不合法的是‘(’还是‘)’并一直删除同一个。
+*** Sliding window 通常是两个变量l和r，根据要求缩放。一般是r向后推，到不符合条件以后l向后推，r重新开始。
+*** 如果dp的array是Boolean array，很可能需要分情况讨论并且用逻辑连接符来计算新结果。
+*** 合并两个sorted array，可以从头开始（ptr从0开始，小的往头放）。或者从尾开始（ptr从length - 1开始，大的往尾放）
+*** 计算mid时， mid = (lo + hi) / 2; 会overflow. 用 int mid = lo + (hi - lo) / 2  来代替。

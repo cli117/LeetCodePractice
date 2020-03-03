@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class _SortList_148 {
     public class ListNode {
         int val;
@@ -7,6 +9,55 @@ public class _SortList_148 {
 // TODO: Analyze this!
     public ListNode sortList(ListNode head)
     {
+//        // Top-down
+//        if (head == null || head.next == null)
+//            return head;
+//
+//        ListNode slow = head, fast = head.next;
+//        while (fast != null && fast.next != null)
+//        {
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//        ListNode p2Start = slow.next;
+//        slow.next = null;
+//
+//        ListNode left = sortList(head);
+//        ListNode right = sortList(p2Start);
+//
+//        ListNode res = new ListNode(0);
+//        ListNode ptr = res;
+//        while (left != null || right != null)
+//        {
+//            if (left != null && right != null)
+//            {
+//                if (left.val < right.val)
+//                {
+//                    ptr.next = left;
+//                    left = left.next;
+//                }
+//                else
+//                {
+//                    ptr.next = right;
+//                    right = right.next;
+//                }
+//                ptr = ptr.next;
+//            }
+//            else if (left != null)
+//            {
+//                ptr.next = left;
+//                break;
+//            }
+//            else
+//            {
+//                ptr.next = right;
+//                break;
+//            }
+//        }
+//        return res.next;
+
+
+        // Bottom - up
         if (head == null) return null;
         ListNode ptr = head;
         int length = 0;

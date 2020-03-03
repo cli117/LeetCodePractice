@@ -9,14 +9,14 @@ public class LCAOfBT_236 {
     }
 
     // Recursion
-//    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+//    public PCRecursion.TreeNode lowestCommonAncestor(PCRecursion.TreeNode root, PCRecursion.TreeNode p, PCRecursion.TreeNode q) {
 //        if (root == null) return null;
-//        TreeNode result = new TreeNode(-1);
+//        PCRecursion.TreeNode result = new PCRecursion.TreeNode(-1);
 //        recursion(root, p, q, result);
 //        return result;
 //    }
 //
-//    private boolean recursion(TreeNode current, TreeNode p, TreeNode q, TreeNode result)
+//    private boolean recursion(PCRecursion.TreeNode current, PCRecursion.TreeNode p, PCRecursion.TreeNode q, PCRecursion.TreeNode result)
 //    {
 //        if (current == null) return false;
 //
