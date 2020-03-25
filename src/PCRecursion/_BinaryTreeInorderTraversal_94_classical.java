@@ -6,9 +6,9 @@ import java.util.ArrayList;
 //      1
 //   2     3
 //4     5
-// Inorder:     4 2 5 1 3
-// Preorder:    1 2 4 5 3
-// Postorder:   4 5 2 3 1
+//(a) Inorder (Left, Root, Right) : 4 2 5 1 3
+//(b) Preorder (Root, Left, Right) : 1 2 4 5 3
+//(c) Postorder (Left, Right, Root) : 4 5 2 3 1
 // Breadth 1st: 1 2 3 4 5
 public class _BinaryTreeInorderTraversal_94_classical {
     private class TreeNode
